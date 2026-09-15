@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Khidmati DZ | خدماتي</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#f6f8fb;color:#172033}
+header{background:#fff;border-bottom:1px solid #e6e9ef;position:sticky;top:0;z-index:5}
+.nav{max-width:1100px;margin:auto;padding:15px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-size:24px;font-weight:800}.logo span{font-size:14px;color:#64748b;display:block}
+nav a{margin:0 7px;text-decoration:none;color:#334155;font-size:14px;cursor:pointer}
+.hero{max-width:1100px;margin:35px auto;padding:40px 25px;text-align:center}
+.hero h1{font-size:38px;margin:8px 0}.hero p{color:#64748b;font-size:18px}
+.btn{display:inline-block;border:0;border-radius:10px;padding:12px 20px;background:#2563eb;color:white;cursor:pointer;font-size:15px;text-decoration:none}
+.section{max-width:1100px;margin:20px auto;padding:10px 20px}.section h2{text-align:center;margin:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:15px}
+.card{background:white;border:1px solid #e7eaf0;border-radius:15px;padding:20px;min-height:135px;box-shadow:0 4px 16px #00000008}
+.card h3{margin:8px 0}.card p{color:#64748b;font-size:14px;line-height:1.6}
+.teacher{background:#fff;border-radius:18px;padding:25px;border:1px solid #e7eaf0}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+select,input,textarea{padding:12px;border:1px solid #d9dee7;border-radius:9px;background:#fff;font-family:inherit;width:100%}
+.filters select{flex:1;min-width:180px}
+.form{max-width:700px;margin:0 auto;background:#fff;padding:25px;border-radius:16px;border:1px solid #e7eaf0}
+.form label{display:block;margin:12px 0 6px;font-size:14px}
+footer{margin-top:50px;background:#172033;color:white;padding:30px;text-align:center}
+#message{display:none;margin-top:15px;padding:12px;background:#ecfdf5;border:1px solid #a7f3d0;border-radius:9px}
+</style>
+</head>
+<body>
+<header><div class="nav">
+<div class="logo">Khidmati DZ<span>خدماتي الجزائر</span></div>
+<nav>
+<a onclick="show('home')">الرئيسية</a>
+<a onclick="show('services')">الخدمات</a>
+<a onclick="show('teacher')">🎒 حقيبة الأستاذ</a>
+<a onclick="show('request')">اطلب خدمة</a>
+</nav>
+</div></header>
+
+<main id="home">
+<section class="hero">
+<h1>خدماتك الرقمية والجامعية في مكان واحد</h1>
+<p>منصة أولية تجمع الخدمات الجامعية، المكتبية، الإدارية و«حقيبة الأستاذ».</p>
+<a class="btn" onclick="show('request')">اطلب خدمة الآن</a>
+</section>
+<section class="section"><h2>أقسام المنصة</h2>
+<div class="grid">
+<div class="card"><h3>🎓 الخدمات الجامعية</h3><p>تنسيق البحوث والمذكرات، العروض، الفهارس والمراجع.</p></div>
+<div class="card" onclick="show('teacher')"><h3>👨‍🏫 حقيبة الأستاذ</h3><p>موارد وتنظيمات تساعد الأستاذ في التحضير والتدريس والتقويم.</p></div>
+<div class="card"><h3>💻 Word و Excel</h3><p>نماذج وجداول ومتابعة الفواتير والزبائن.</p></div>
+<div class="card"><h3>🏢 الخدمات الإدارية</h3><p>نماذج الطلبات والرسائل والمراسلات الإدارية.</p></div>
+<div class="card"><h3>🌐 الترجمة</h3><p>خدمات ترجمة وتنسيق بالعربية والفرنسية والإنجليزية.</p></div>
+</div></section>
+</main>
+
+<section id="services" class="section" style="display:none"><h2>الخدمات</h2><div class="grid">
+<div class="card"><h3>🎓 جامعي</h3><p>بحث، مذكرة، تنسيق، عرض تقديمي ومراجع.</p></div>
+<div class="card"><h3>💻 مكتبي</h3><p>Word، Excel، PDF، جداول وتقارير.</p></div>
+<div class="card"><h3>🏢 إداري</h3><p>طلبات، رسائل، نماذج ومراسلات.</p></div>
+<div class="card"><h3>🌐 ترجمة</h3><p>عربي، فرنسي، إنجليزي.</p></div>
+</div></section>
+
+<section id="teacher" class="section" style="display:none">
+<h2>🎒 حقيبة الأستاذ</h2>
+<div class="teacher">
+<p>اختر الطور والمستوى والمادة ونوع المورد.</p>
+<div class="filters">
+<select id="stage"><option>التعليم الابتدائي</option><option>التعليم المتوسط</option><option>التعليم الثانوي</option></select>
+<select id="level"><option>اختر المستوى</option><option>السنة الأولى</option><option>السنة الثانية</option><option>السنة الثالثة</option><option>السنة الرابعة</option><option>السنة الخامسة</option></select>
+<select id="subject"><option>اختر المادة</option><option>اللغة العربية</option><option>الفرنسية</option><option>الإنجليزية</option><option>الرياضيات</option><option>العلوم</option><option>التاريخ والجغرافيا</option><option>التربية الإسلامية</option><option>الإعلام الآلي</option><option>التربية البدنية</option></select>
+</div>
+<div class="grid">
+<div class="card"><h3>📘 تحضير الدروس</h3><p>نماذج قابلة للتعديل والتنظيم.</p></div>
+<div class="card"><h3>📝 فروض واختبارات</h3><p>نماذج وأسئلة للتقويم والمراجعة.</p></div>
+<div class="card"><h3>📊 شبكات التقويم</h3><p>نماذج متابعة وتقويم قابلة للتخصيص.</p></div>
+<div class="card"><h3>📄 أوراق العمل</h3><p>أنشطة وتمارين داعمة للتعلم.</p></div>
+</div>
+<br><button class="btn" onclick="alert('في النسخة القادمة سنربط هذا القسم بقاعدة بيانات وملفات حقيقية.')">استكشاف الحقيبة</button>
+</div></section>
+
+<section id="request" class="section" style="display:none">
+<h2>📝 طلب خدمة</h2>
+<form class="form" onsubmit="sendRequest(event)">
+<label>الاسم</label><input required placeholder="اكتب اسمك">
+<label>رقم الهاتف</label><input required placeholder="05 / 06 / 07 ...">
+<label>نوع الخدمة</label><select required><option value="">اختر الخدمة</option><option>خدمة جامعية</option><option>حقيبة الأستاذ</option><option>Word / Excel</option><option>خدمة إدارية</option><option>ترجمة</option></select>
+<label>وصف الطلب</label><textarea rows="5" required placeholder="اشرح ما تحتاجه..."></textarea>
+<label>الملف (اختياري في هذا النموذج)</label><input type="file">
+<button class="btn" style="margin-top:15px;width:100%">إرسال الطلب</button>
+<div id="message">تم تسجيل الطلب في النموذج التجريبي. في النسخة الحقيقية سنربطه بقاعدة بيانات وإشعارات.</div>
+</form></section>
+
+<footer>Khidmati DZ — نموذج أولي تجريبي © 2026</footer>
+<script>
+function show(id){
+['home','services','teacher','request'].forEach(x=>{
+let e=document.getElementById(x); if(e)e.style.display=(x===id?'block':'none');
+});
+window.scrollTo({top:0,behavior:'smooth'});
+}
+function sendRequest(e){e.preventDefault();document.getElementById('message').style.display='block';e.target.reset();}
+</script>
+</body>
+</html>
